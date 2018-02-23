@@ -17,10 +17,6 @@ namespace Problema2
         public Form1()
         {
             InitializeComponent();
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            radioButton3.Checked = false;
-            radioButton4.Checked = false;
             timer1.Stop();
             timer2.Stop();
             timer3.Stop();
@@ -68,7 +64,20 @@ namespace Problema2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            if (timer2.Enabled == true)
+            {
+                timer2.Enabled = false;
+                CambiarApagado(pictureBox1);
+                CambiarApagado(pictureBox2);
+                CambiarApagado(pictureBox3);
+                CambiarApagado(pictureBox4);
+                timer1.Start();
+            }
+            else
+            {
+                timer1.Start();
+            }
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -152,30 +161,26 @@ namespace Problema2
                 CambiarApagado(pictureBox2);
                 CambiarApagado(pictureBox3);
                 CambiarApagado(pictureBox4);
+                timer3.Start();
             }
-            if (timer1.Enabled == true)
+            else if (timer1.Enabled == true)
             {
                 timer1.Stop();
                 CambiarApagado(pictureBox1);
                 CambiarApagado(pictureBox2);
                 CambiarApagado(pictureBox3);
                 CambiarApagado(pictureBox4);
+                timer3.Start();
             }
             else
             {
-                radioButton1.Visible = true;
-                radioButton2.Visible = true;
-                radioButton3.Visible = true;
-                radioButton4.Visible = true;
-                label1.Text = "*Selecciona la vía que quiere\n transformar a ´vías preferentes`\n con el RadioButton.";
-                label1.Visible = true;
                 timer3.Start();
             }
         }
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if (radioButton1.Checked == true || radioButton2.Checked == true)
+            if (radioButton1.Checked)
             {
                 if (cont > 0 && cont < 41)
                 {
@@ -210,7 +215,7 @@ namespace Problema2
                 }
             }
 
-            else if (radioButton3.Checked == true || radioButton4.Checked == true)
+            else if (radioButton2.Checked)
             {
                 if (cont > 0 && cont < 41)
                 {
@@ -244,6 +249,7 @@ namespace Problema2
                     cont = 0;
                 }
             }
+            cont++;
         }
     }
 }
