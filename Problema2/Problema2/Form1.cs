@@ -12,7 +12,10 @@ namespace Problema2
 {
     public partial class Form1 : Form
     {
+        Random r = new Random();
         int cont = 0;
+        int cuentan1 = 0;
+        int cuentan2 = 0;
 
         public Form1()
         {
@@ -20,6 +23,7 @@ namespace Problema2
             timer1.Stop();
             timer2.Stop();
             timer3.Stop();
+            timer4.Stop();
         }
 
         public void CambiarAmbar(PictureBox p1)
@@ -77,7 +81,7 @@ namespace Problema2
             {
                 timer1.Start();
             }
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -101,40 +105,41 @@ namespace Problema2
             cont++;
         }
 
+
         private void timer2_Tick(object sender, EventArgs e)
         {
-          
-                if (cont > 0 && cont < 21)
-                {
-                    CambiarVerdes(pictureBox1, pictureBox4);
-                    CambiarRojos(pictureBox2, pictureBox3);
-                }
-                else if (cont > 20 && cont < 26)
-                {
-                    CambiarAmbars(pictureBox1, pictureBox4);
-                }
-                else if (cont > 25 && cont < 31)
-                {
-                    CambiarRojos(pictureBox1, pictureBox4);
-                }
 
-                else if (cont > 30 && cont < 51)
-                {
-                    CambiarVerdes(pictureBox2, pictureBox3);
-                    CambiarRojos(pictureBox1, pictureBox4);
-                }
-                else if (cont > 50 && cont < 56)
-                {
-                    CambiarAmbars(pictureBox2, pictureBox3);
-                }
-                else if (cont > 55  && cont < 61)
-                {
-                    CambiarRojos(pictureBox2, pictureBox3);
-                }
-                else if (cont == 65)
-                {
-                    cont = 0;
-                }
+            if (cont > 0 && cont < 21)
+            {
+                CambiarVerdes(pictureBox1, pictureBox4);
+                CambiarRojos(pictureBox2, pictureBox3);
+            }
+            else if (cont > 20 && cont < 26)
+            {
+                CambiarAmbars(pictureBox1, pictureBox4);
+            }
+            else if (cont > 25 && cont < 31)
+            {
+                CambiarRojos(pictureBox1, pictureBox4);
+            }
+
+            else if (cont > 30 && cont < 51)
+            {
+                CambiarVerdes(pictureBox2, pictureBox3);
+                CambiarRojos(pictureBox1, pictureBox4);
+            }
+            else if (cont > 50 && cont < 56)
+            {
+                CambiarAmbars(pictureBox2, pictureBox3);
+            }
+            else if (cont > 55 && cont < 61)
+            {
+                CambiarRojos(pictureBox2, pictureBox3);
+            }
+            else if (cont == 65)
+            {
+                cont = 0;
+            }
 
             cont++;
         }
@@ -151,6 +156,7 @@ namespace Problema2
             }
             timer2.Start();
         }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -246,6 +252,147 @@ namespace Problema2
                 }
                 else if (cont == 85)
                 {
+                    cont = 0;
+                }
+            }
+            cont++;
+        }
+
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (timer1.Enabled == true)
+            {
+                timer1.Stop();
+            }
+            else if (timer2.Enabled == true)
+            {
+                timer2.Stop();
+            }
+            else if (timer3.Enabled == true)
+            {
+                timer2.Stop();
+            }
+            else
+            {
+                timer4.Start();
+            cuentan1 = r.Next(0, 20);
+            cuentan2 = r.Next(0, 20);
+            }
+        }
+
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            numericUpDown1.Value = cuentan1;
+            numericUpDown2.Value = cuentan2;
+
+            if (numericUpDown1.Value > numericUpDown2.Value)
+            {
+                if (cont > 0 && cont < 41)
+                {
+                    CambiarVerdes(pictureBox1, pictureBox4);
+                    CambiarRojos(pictureBox2, pictureBox3);
+                }
+                else if (cont > 40 && cont < 46)
+                {
+                    CambiarAmbars(pictureBox1, pictureBox4);
+                }
+                else if (cont > 45 && cont < 51)
+                {
+                    CambiarRojos(pictureBox1, pictureBox4);
+                }
+
+                else if (cont > 50 && cont < 71)
+                {
+                    CambiarVerdes(pictureBox2, pictureBox3);
+                    CambiarRojos(pictureBox1, pictureBox4);
+                }
+                else if (cont > 70 && cont < 76)
+                {
+                    CambiarAmbars(pictureBox2, pictureBox3);
+                }
+                else if (cont > 75 && cont < 81)
+                {
+                    CambiarRojos(pictureBox2, pictureBox3);
+                }
+                else if (cont == 85)
+                {
+                    cuentan1 = r.Next(0, 20);
+                    cuentan2 = r.Next(0, 20);
+                    cont = 0;
+                }
+            }
+
+            else if (numericUpDown2.Value > numericUpDown1.Value)
+            {
+                if (cont > 0 && cont < 41)
+                {
+                    CambiarVerdes(pictureBox2, pictureBox3);
+                    CambiarRojos(pictureBox1, pictureBox4);
+                }
+                else if (cont > 40 && cont < 46)
+                {
+                    CambiarAmbars(pictureBox2, pictureBox3);
+                }
+                else if (cont > 45 && cont < 51)
+                {
+                    CambiarRojos(pictureBox2, pictureBox3);
+                }
+
+                else if (cont > 50 && cont < 71)
+                {
+                    CambiarVerdes(pictureBox1, pictureBox4);
+                    CambiarRojos(pictureBox2, pictureBox3);
+                }
+                else if (cont > 70 && cont < 76)
+                {
+                    CambiarAmbars(pictureBox1, pictureBox4);
+                }
+                else if (cont > 75 && cont < 81)
+                {
+                    CambiarRojos(pictureBox1, pictureBox4);
+                }
+                else if (cont == 85)
+                {
+                    cuentan1 = r.Next(0, 20);
+                    cuentan2 = r.Next(0, 20);
+                    cont = 0;
+                }
+            }
+
+            else if (numericUpDown1.Value == numericUpDown2.Value)
+            {
+                if (cont > 0 && cont < 41)
+                {
+                    CambiarVerdes(pictureBox1, pictureBox4);
+                    CambiarRojos(pictureBox2, pictureBox3);
+                }
+                else if (cont > 40 && cont < 46)
+                {
+                    CambiarAmbars(pictureBox1, pictureBox4);
+                }
+                else if (cont > 45 && cont < 51)
+                {
+                    CambiarRojos(pictureBox1, pictureBox4);
+                }
+
+                else if (cont > 50 && cont < 71)
+                {
+                    CambiarVerdes(pictureBox2, pictureBox3);
+                    CambiarRojos(pictureBox1, pictureBox4);
+                }
+                else if (cont > 70 && cont < 76)
+                {
+                    CambiarAmbars(pictureBox2, pictureBox3);
+                }
+                else if (cont > 75 && cont < 81)
+                {
+                    CambiarRojos(pictureBox2, pictureBox3);
+                }
+                else if (cont == 85)
+                {
+                    cuentan1 = r.Next(0, 20);
+                    cuentan2 = r.Next(0, 20);
                     cont = 0;
                 }
             }

@@ -83,9 +83,39 @@ namespace Problema2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap carretera2 {
+            get {
+                object obj = ResourceManager.GetObject("carretera2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carretera3 {
+            get {
+                object obj = ResourceManager.GetObject("carretera3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fondo_Carretera {
             get {
                 object obj = ResourceManager.GetObject("Fondo Carretera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo_menú {
+            get {
+                object obj = ResourceManager.GetObject("fondo menú", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
